@@ -16,6 +16,9 @@ const index = () => {
       <div>
         <button onClick={handleClick}>Place order</button>
       </div>
+      <Link href="/posts">
+        <a>Posts</a>
+      </Link>
     </div>
   );
 };
