@@ -7,6 +7,7 @@ const post = ({ post }) => {
         <h4>
           {post.id} -{post.title}
         </h4>
+        <h5>{post.body}</h5>
       </div>
     </>
   );
@@ -15,18 +16,29 @@ const post = ({ post }) => {
 export default post;
 
 export async function getStaticPaths() {
+  const reponse = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await reponse.json();
+
+  const paths = data.map((post) => {
+    return {
+      params: {
+        postId: `${post.id}`,
+      },
+    };
+  });
   return {
-    paths: [
-      {
-        params: { postId: "1" },
-      },
-      {
-        params: { postId: "2" },
-      },
-      {
-        params: { postId: "3" },
-      },
-    ],
+    paths,
+    // paths: [
+    //   {
+    //     params: { postId: "1" },
+    //   },
+    //   {
+    //     params: { postId: "2" },
+    //   },
+    //   {
+    //     params: { postId: "3" },
+    //   },
+    // ],
     fallback: false,
   };
 }
