@@ -24,5 +24,49 @@
       "description": "description 3",
       "category": "wwe"
     }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Artical 1",
+      "description": "description 1",
+      "category": "sports"
+    },
+    {
+      "id": 2,
+      "title": "Artical 2",
+      "description": "description 2",
+      "category": "News"
+    },
+    {
+      "id": 3,
+      "title": "Artical 3",
+      "description": "description 3",
+      "category": "wwe"
+    },
+    {
+      "id": 4,
+      "title": "Artical 4",
+      "description": "description 4",
+      "category": "sports"
+    },
+    {
+      "id": 5,
+      "title": "Artical 5",
+      "description": "description 5",
+      "category": "news"
+    },
+    {
+      "id": 6,
+      "title": "Artical 6",
+      "description": "description 6",
+      "category": "sports"
+    },
+    {
+      "id": 7,
+      "title": "Artical 7",
+      "description": "description 7",
+      "category": "sports"
+    }
   ]
 }
