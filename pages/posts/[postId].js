@@ -56,3 +56,15 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+// FALLBACK : FLASE
+//1.when fallback is se to false ,if there are no page returned from getStaticPaths then it returned the 404 page
+//2.The paths returned from getStaticProps will be rendered to html at build time by setStaticPaths
+
+//FALLBACK : TRUE
+//1.The paths returned from getStaticProps will be rendered to html at build time by setStaticPaths
+//2.when fallback is se to false ,if there are no page returned from getStaticPaths then it not return the 404 page, it return hr fallback ui
+//3.Fallback is true, used when the site is large and has lot of static pages like e-commerce site.
+
+//FALLBACK : BLOCKING
+//1.The paths returned from getStaticProps will be rendered to html at build time by setStaticPaths
