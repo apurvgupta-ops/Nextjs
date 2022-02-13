@@ -19,7 +19,6 @@ const commentsPage = () => {
       },
     });
     const data = await response.json();
-    // setComment("");
     console.log(data);
   };
 
