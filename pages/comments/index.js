@@ -58,3 +58,6 @@ const commentsPage = () => {
 };
 
 export default commentsPage;
+
+// [...params]  =  catch all routes , this routes redirect to any page which is written in the url except base url.
+//[[...params]] = this includes all the routes

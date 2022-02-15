@@ -1,0 +1,15 @@
+.main {
+  background-color: aqua;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  background-color: aqua;
+  display: flex;
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+}
