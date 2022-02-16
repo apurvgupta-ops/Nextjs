@@ -1,4 +1,4 @@
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 
 const about = () => {
   return <div>about page</div>;
