@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from "../styles/Layout.module.css";
+import { signIn, signOut } from "next-auth/react";
 
 const Header = () => {
   return (
@@ -18,13 +19,27 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <Link href="/signin">
-            <a>SignIn</a>
+          <Link href="/api/auth/signin">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                signIn();
+              }}
+            >
+              SignIn
+            </a>
           </Link>
         </li>
         <li>
-          <Link href="/signout">
-            <a>SignOut</a>
+          <Link href="/api/auth/signout">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                signOut();
+              }}
+            >
+              SignOut
+            </a>
           </Link>
         </li>
       </ul>
