@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import styles from "../styles/Layout.module.css";
-import { signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Header = () => {
+  const { session, status } = useSession();
   return (
     <>
       <div className={styles.main}>Next Auth</div>
@@ -18,30 +19,35 @@ const Header = () => {
             <a>Dashboard</a>
           </Link>
         </li>
-        <li>
-          <Link href="/api/auth/signin">
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                signIn();
-              }}
-            >
-              SignIn
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/api/auth/signout">
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                signOut();
-              }}
-            >
-              SignOut
-            </a>
-          </Link>
-        </li>
+        {!session && status && (
+          <li>
+            <Link href="/api/auth/signin">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn();
+                }}
+              >
+                SignIn
+              </a>
+            </Link>
+          </li>
+        )}
+
+        {session && (
+          <li>
+            <Link href="/api/auth/signout">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  signOut();
+                }}
+              >
+                SignOut
+              </a>
+            </Link>
+          </li>
+        )}
       </ul>
     </>
   );
