@@ -5,6 +5,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 const Header = () => {
   const { session, status } = useSession();
+  // console.log({ session, status });
   return (
     <>
       <div className={styles.main}>Next Auth</div>

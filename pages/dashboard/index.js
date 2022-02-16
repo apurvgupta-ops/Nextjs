@@ -1,5 +1,6 @@
 //Client side rendering
 
+import { getSession, signIn } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 
 const dashboard = () => {
@@ -7,6 +8,14 @@ const dashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
 
   useEffect(() => {
+    const securePage = async () => {
+      const session = await getSession();
+      if (!session) {
+        signIn();
+      } else {
+        setLoading(false);
+      }
+    };
     async function fetchdata() {
       const response = await fetch("http://localhost:4000/dashboard");
       const data = await response.json();
@@ -15,7 +24,8 @@ const dashboard = () => {
     }
 
     fetchdata();
-  });
+    securePage();
+  }, []);
 
   if (loading) {
     return <h2>Loading...</h2>;

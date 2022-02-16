@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   }
   return (
     <>
-      <SessionProvider>
+      <SessionProvider session={pageProps.session}>
         <Head>
           <title>Demo</title>
           <meta name="Description" content="Demo of next js"></meta>
