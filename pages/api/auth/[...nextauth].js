@@ -7,4 +7,9 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+  database: "url",
+  secret: {
+    jwt: true,
+  },
+  jwt: "dfjzxm,",
 });
